@@ -21,7 +21,7 @@ export function Home() {
   const defaultSearch = searchParams.get("searchBy") || ""
   const queryClient = useQueryClient()
   const [searchBy, setSearchBy] = useState(defaultSearch)
-  console.log("searchBy:", searchBy)
+ 
   const context = useContext(GlobalContext)
   if (!context) throw Error("Context is missing")
   const { handleAddToCart } = context
@@ -97,7 +97,7 @@ export function Home() {
               <CardDescription>Some Description here</CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Card Content Here</p>
+            {product.price}<p>sr</p>
             </CardContent>
             <CardFooter>
               <Button className="w-full" onClick={() => handleAddToCart(product)}>

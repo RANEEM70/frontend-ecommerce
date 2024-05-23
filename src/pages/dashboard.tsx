@@ -9,7 +9,7 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableFooter,
+  // TableFooter,
   TableHead,
   TableHeader,
   TableRow
@@ -17,8 +17,10 @@ import {
 import { Product, User } from "@/types"
 import { NavBar } from "@/components/ui/navbar"
 
+
 export function Dashboard() {
   const queryClient = useQueryClient()
+
 
   const [product, setProduct] = useState({
     name: "",
@@ -28,6 +30,8 @@ export function Dashboard() {
   })
 
 
+
+  
 
   // Handle
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,6 +62,7 @@ export function Dashboard() {
       return Promise.reject(new Error("Something went wrong"))
     }
   }
+  
   const deleteProduct = async (id: string) => {
     try {
       const res = await api.delete(`/products/${id}`)
@@ -85,8 +90,7 @@ export function Dashboard() {
           headers:{
             Authorization: `Bearer ${userToken}`
           }
-        }
-      )
+        })
       return res.data
     } catch (error) {
       console.error(error)
@@ -99,10 +103,13 @@ export function Dashboard() {
     queryKey: ["products"],
     queryFn: getProducts
   })
-  const { data: users, userError } = useQuery<User[]>({
+  const { data: users } = useQuery<User[]>({
     queryKey: ["users"],
     queryFn: getUsers
   })
+  
+
+
   return (
     <>
       <NavBar />
