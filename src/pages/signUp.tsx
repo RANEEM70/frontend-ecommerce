@@ -41,51 +41,67 @@ export function SignUp() {
     }
   }
   return (
-    <div>
-      <h1>SignUp</h1>
-      <form action="POST" onSubmit={handleSubmit}>
-        <Input
-          name="firstName"
-          className="mt-4"
-          type="text"
-          placeholder="FirstName"
-          onChange={handleChange}
-        />
-        <Input
-          name="lastName"
-          className="mt-4"
-          type="text"
-          placeholder="LastName"
-          onChange={handleChange}
-        />
-        <Input
-          name="email"
-          className="mt-4"
-          type="text"
-          placeholder="Email"
-          onChange={handleChange}
-        />
-        <Input
-          name="password"
-          className="mt-4"
-          type="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
-        <Input
-          name="phoneNumber"
-          className="mt-4"
-          type="number"
-          placeholder="YourPhone"
-          onChange={handleChange}
-        />
-        <div>
-          <Button variant="ghost">
-            <Link to="/login">Have An Account Already ?</Link>
-          </Button>
-          <Button className="mt-7">Create Account</Button>
-        </div>
-      </form>
+    <section id="sect">
+    <div id="leaves">
     </div>
+    <img id="bg" src="/src/image/LSD.gif" alt="background"/>
+    <form action="POST" onSubmit={handleSubmit} id="LSD">
+      <h2>Sign In</h2>
+      <div id="inputBox">
+      <Input
+name="firstName"
+className="mt-4"
+type="text"
+placeholder="FirstName"
+onChange={handleChange}
+/>
+      </div>
+      <div id="inputBox">
+      <Input
+name="lastName"
+className="mt-4"
+type="text"
+placeholder="LastName"
+onChange={handleChange}
+/>
+</div>
+      <div id="inputBox">
+      <Input
+name="email"
+className="mt-4"
+type="text"
+placeholder="Email"
+onChange={handleChange}
+/>
+</div>
+      <div id="inputBox">
+      <Input
+name="password"
+className="mt-4"
+type="password"
+placeholder="Password"
+onChange={handleChange}
+/>
+</div>
+<div id="inputBox">
+<Input
+name="phoneNumber"
+className="mt-4"
+type="number"
+placeholder="YourPhone"
+onChange={handleChange}
+/>
+      </div>
+      <div id="inputBox">
+        <Button id="submit">
+               Login</Button>
+      </div>
+      <div id="group">
+        <a href="#">Forget Password</a>
+        <a href="/login">Login</a>
+      </div>
+    </form>
+    </section>
   )
 }
+

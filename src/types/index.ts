@@ -18,6 +18,7 @@ export type User =
     email: string,
     Id: string,
     phoneNumber: number,
+    password: string,
     role: string
 }
 

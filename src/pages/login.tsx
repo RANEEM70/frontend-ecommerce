@@ -55,30 +55,39 @@ export function LogIn() {
   }
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form action="POST" onSubmit={handleSubmit}>
-        <Input
+<section id="sect">
+<div id="leaves">
+</div>
+<img id="bg" src="/src/image/LSD.gif" alt="background"/>
+<form action="POST" onSubmit={handleSubmit} id="LSD">
+  <h2>Log In </h2>
+  <div id="inputBox">
+    <Input id="field"
           name="email"
           className="mt-4"
           type="text"
           placeholder="Email"
           onChange={handleChange}
         />
-        <Input
+  </div>
+  <div id="inputBox">
+    <Input id="field"
           name="password"
           className="mt-4"
-          type="password"
+          type="text"
           placeholder="Password"
           onChange={handleChange}
         />
-        <div>
-          <Button variant="ghost">
-            <Link to="/signUp">Create An Account</Link>
-          </Button>
-          <Button>Login</Button>
-        </div>
-      </form>
-    </div>
+  </div>
+  <div id="inputBox">
+    <Button id="submit">
+           Login</Button>
+  </div>
+  <div id="group">
+    <a href="#">Forget Password</a>
+    <a href="/signUp">Sign up</a>
+  </div>
+</form>
+</section>
   )
 }
