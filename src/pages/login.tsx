@@ -36,9 +36,11 @@ export function LogIn() {
     const objectKey = await handleLogin()
 
     if (objectKey) {
-      localStorage.setItem("token", objectKey)
       const decodedToken = jwt(objectKey)
       const user = reshapeUser(decodedToken)
+      localStorage.setItem("token", objectKey)
+      localStorage.setItem("user",JSON.stringify(user))
+
       handleStoreUser(user)
       navigate("/")
     }
@@ -46,7 +48,7 @@ export function LogIn() {
 
   const handleLogin = async () => {
     try {
-      const res = await api.post(`users/login`, user)
+      const res = await api.post(`/users/login`, user)
       return res.data
     } catch (error) {
       console.error(error)
@@ -80,8 +82,7 @@ export function LogIn() {
         />
   </div>
   <div id="inputBox">
-    <Button id="submit">
-           Login</Button>
+    <Button>Login</Button>
   </div>
   <div id="group">
     <a href="#">Forget Password</a>
